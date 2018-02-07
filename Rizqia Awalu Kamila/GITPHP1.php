@@ -1,4 +1,14 @@
 <?php
+ echo "PERULANGAN <br>";
+ $angka=4;
+
+ for($i=1;$i<=$angka;$i++){
+   echo "angka ke-$i<br>";
+ }
+
+?>
+
+<?php
  echo "SELEKSI <br>";
  $angka=1;
 
@@ -15,15 +25,5 @@
    }else{
      echo "Anda hanya boleh memasukan angka 1-5!";
    }
-
-?>
-
-<?php
- echo "PERULANGAN <br>";
- $angka=4;
-
- for($i=1;$i<=$angka;$i++){
-   echo "angka ke-$i<br>";
- }
 
 ?>
