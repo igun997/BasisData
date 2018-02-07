@@ -12,7 +12,7 @@ if($t>=80){
   echo "Nilai $t = E <br>";
 }
  ?>
-
+ 
 <?php
 for($x=1;$x<=10;$x++){
   echo "Angka $x <br>";
