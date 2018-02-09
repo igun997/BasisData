@@ -16,7 +16,7 @@
     $satu = $_GET['satu'];
     $dua = $_GET['dua'];
 
-    echo "$satu + $dua".$satu+$dua;
+    echo "$satu x $dua = ".$satu*$dua;
      ?>
   </body>
 </html>
