@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Request GET</title>
+<title>Kereta Api</title>
 </head>
 <body>
   <h2>Stasiun Kereta Api Bandung-Banjar Banjar-Bandung</h2>
