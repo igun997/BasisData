@@ -129,29 +129,51 @@ $kebutuhan_j_kalori_p=$kal_basal_p+$kal_aktv_p-$kor_usia_p;
 
 //pembagian jumlah kebutuhan kalori ke komposisi makanan
 //
-$kjk_pagi_l=$kebutuhan_j_kalori_l*0.2;
-$kjk_siang_l=$kebutuhan_j_kalori_l*0.3;
-$kjk_malam_l=$kebutuhan_j_kalori_l*0.25;
-$kjk_kudapan_pagi_l=$kebutuhan_j_kalori_l*0.1;
-$kjk_kudapan_sore_l=$kebutuhan_j_kalori_l*0.15;
-echo "Makan Pagi (20%) = $kjk_pagi_l <br/>";
-echo "Makan Siang (30%) = $kjk_siang_l <br/>";
-echo "Makan Malam (25%) = $kjk_malam_l <br/>";
-echo "Kudapan Pagi (10%) = $kjk_kudapan_pagi_l <br/>";
-echo "Kudapan Sore (15%) = $kjk_kudapan_sore_l <br/>";
 
-$kjk_pagi_p=$kebutuhan_j_kalori_p*0.2;
-$kjk_siang_p=$kebutuhan_j_kalori_p*0.3;
-$kjk_malam_p=$kebutuhan_j_kalori_p*0.25;
-$kjk_kudapan_pagi_p=$kebutuhan_j_kalori_p*0.1;
-$kjk_kudapan_sore_p=$kebutuhan_j_kalori_pl*0.15;
-echo "Makan Pagi (20%) = $kjk_pagi_p <br/>";
-echo "Makan Siang (30%) = $kjk_siang_p <br/>";
-echo "Makan Malam (25%) = $kjk_malam_p <br/>";
-echo "Kudapan Pagi (10%) = $kjk_kudapan_pagi_p <br/>";
-echo "Kudapan Sore (15%) = $kjk_kudapan_sore_p <br/>";
+if ($kelamin=='perempuan') {
+  $kjk_pagi_p=$kebutuhan_j_kalori_p*0.2;
+  $kjk_siang_p=$kebutuhan_j_kalori_p*0.3;
+  $kjk_malam_p=$kebutuhan_j_kalori_p*0.25;
+  $kjk_kudapan_pagi_p=$kebutuhan_j_kalori_p*0.1;
+  $kjk_kudapan_sore_p=$kebutuhan_j_kalori_pp*0.15;
+  echo "Makan Pagi (20%) = $kjk_pagi_p <br/>";
+  echo "Makan Siang (30%) = $kjk_siang_p <br/>";
+  echo "Makan Malam (25%) = $kjk_malam_p <br/>";
+  echo "Kudapan Pagi (10%) = $kjk_kudapan_pagi_p <br/>";
+  echo "Kudapan Sore (15%) = $kjk_kudapan_sore_p <br/>";
+}else {
+  $kjk_pagi_l=$kebutuhan_j_kalori_l*0.2;
+  $kjk_siang_l=$kebutuhan_j_kalori_l*0.3;
+  $kjk_malam_l=$kebutuhan_j_kalori_l*0.25;
+  $kjk_kudapan_pagi_l=$kebutuhan_j_kalori_l*0.1;
+  $kjk_kudapan_sore_l=$kebutuhan_j_kalori_l*0.15;
+  echo "Makan Pagi (20%) = $kjk_pagi_l <br/>";
+  echo "Makan Siang (30%) = $kjk_siang_l <br/>";
+  echo "Makan Malam (25%) = $kjk_malam_l <br/>";
+  echo "Kudapan Pagi (10%) = $kjk_kudapan_pagi_l <br/>";
+  echo "Kudapan Sore (15%) = $kjk_kudapan_sore_l <br/>";
 
-// 
+
+}
+//Pembagian kebutuhan Kalori ke Gram
+if ($kelamin=='perempuan') {
+  $kebutuhan_j_karbohidrat_p=($kebutuhan_j_kalori_p*0.6)/4;
+  $kebutuhan_j_protein_p=($kebutuhan_j_kalori_p*0.4)/4;
+  $kebutuhan_j_lemak_p=($kebutuhan_j_kalori_p*0.2)/9;
+  echo "Karbohidrat : $kebutuhan_j_karbohidrat_p <br/>";
+  echo "Protein     : $kebutuhan_j_protein_p <br/>";
+  echo "Lemak       : $kebutuhan_j_lemak_p <br/>";
+}else {
+  $kebutuhan_j_karbohidrat_l=($kebutuhan_j_kalori_l*0.6)/4;
+  $kebutuhan_j_protein_l=($kebutuhan_j_kalori_l*0.4)/4;
+  $kebutuhan_j_lemak_l=($kebutuhan_j_kalori_l*0.2)/9;
+  echo "Karbohidrat : $kebutuhan_j_karbohidrat_l <br/>";
+  echo "Protein     : $kebutuhan_j_protein_l <br/>";
+  echo "Lemak       : $kebutuhan_j_lemak_l <br/>";
+
+}
+
+
      ?>
   </body>
 </html>
