@@ -1,0 +1,2 @@
+select username, if(status="1","aktif","tidak aktif") as status from user
+SELECT guru.id_guru, matkul.nama_matkul, guru.nama_guru FROM `guru` INNER JOIN `matkul` ON guru.id_guru=matkul.id_matkul
