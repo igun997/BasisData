@@ -1,0 +1,9 @@
+Query Soal 1 : 
+SELECT `guru`.`id_guru`, `matkul`.`nama_matkul`, `guru`.`nama_guru` AS "Pengajar" 
+FROM `guru` 
+INNER JOIN `matkul`
+
+Query Soal 2 :
+SELECT `id_user`,`username`, 
+IF(`status`='1','Aktif','Tidak Aktif') AS 'status' 
+FROM `user`
