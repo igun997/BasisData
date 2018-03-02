@@ -154,6 +154,7 @@ if ($kelamin=='perempuan') {
   echo "Kudapan Sore (15%) = $kjk_kudapan_sore_l <br/>";
 
 
+
 }
 //Pembagian kebutuhan Kalori ke Gram
 if ($kelamin=='perempuan') {
