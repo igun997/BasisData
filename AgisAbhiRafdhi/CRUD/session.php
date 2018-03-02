@@ -10,7 +10,7 @@ if($cek > 0){
 	$_SESSION['username'] = $username;
 	$_SESSION['status'] = "login";
 	header("location:admin/halaman_utama.php");
-echo "aaaaa";
+echo "aaaaa ";
 }else{
 	header("location:login.php");
 
