@@ -30,9 +30,9 @@
 		</tr>
 		<?php
 		include "koneksi.php";
-		$query_mysql = mysql_query("SELECT guru.id_guru, matkul.nama_matkul, guru.nama_guru FROM guru INNER JOIN matkul ")or die(mysql_error());
+		$query_mysql = mysqli_query("SELECT * from user ")or die(mysqli_error());
 		$nomor = 1;
-		while($data = mysql_fetch_array($query_mysql)){
+		while($data = mysqli_fetch_array($query_mysql)){
 		?>
 		<tr>
 			<td><?php echo $nomor++; ?></td>

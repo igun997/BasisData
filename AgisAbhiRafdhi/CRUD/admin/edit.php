@@ -14,9 +14,9 @@
 	<?php
 	include "koneksi.php";
 	$id = $_GET['id_guru'];
-	$query_mysql = mysql_query("SELECT guru.id_guru, matkul.nama_matkul, guru.nama_guru FROM guru INNER JOIN matkul where id_guru=$id'")or die(mysql_error());
+	$query_mysql = mysqli_query("SELECT guru.id_guru, matkul.nama_matkul, guru.nama_guru FROM guru INNER JOIN matkul where id_guru=$id'")or die(mysqli_error());
 	$nomor = 1;
-	while($data = mysql_fetch_array($query_mysql)){
+	while($data = mysqli_fetch_array($query_mysql)){
 	?>
 	<form action="update.php" method="post">
 		<table>
@@ -31,7 +31,7 @@
 				<td>Nama Guru</td>
 				<td><input type="text" name="nama_guru" value="<?php echo $data['nama_guru'] ?>"></td>
 			</tr>
-			
+
 			<tr>
 				<td></td>
 				<td><input type="submit" value="Simpan"></td>
