@@ -24,25 +24,29 @@
 	<table border="1" class="table" align="center">
 		<tr>
 			<th>No</th>
-			<th>Matkul</th>
-			<th>Pengajar</th>
+			<th>Username</th>
+			<th>Password</th>
+			<th>Status</th>
 			<th>Action</th>
 		</tr>
 		<?php
-		include "koneksi.php";
-		$query_mysql = mysqli_query("SELECT * from user ")or die(mysqli_error());
-		$nomor = 1;
-		while($data = mysqli_fetch_array($query_mysql)){
+		include 'koneksi.php';
+		$query = mysqli_query($koneksi,"SELECT * FROM user");
+		foreach ($query as $key => $db) {
+			# code...
+
+$nomor=1;
 		?>
-		<tr>
-			<td><?php echo $nomor++; ?></td>
-			<td><?php echo $data['nama_matkul']; ?></td>
-			<td><?php echo $data['nama_guru']; ?></td>
-			<td>
-				<a class="edit" href="edit.php?id=<?php echo $data['id_guru']; ?>">Edit</a> |
-				<a class="hapus" href="hapus.php?id=<?php echo $data['id_guru']; ?>">Hapus</a>
-			</td>
-		</tr>
+			<tr>
+				<td><?php echo $nomor++; ?></td>
+				<td><?php echo $db['username']; ?></td>
+				<td><?php echo $db['password']; ?></td>
+				<td><?php echo $db['status']; ?></td>
+				<td>
+					<a class="edit" href="edit.php?id=<?php echo $db['id']; ?>">Edit</a> |
+					<a class="hapus" href="hapus.php?id=<?php echo $db['id']; ?>">Hapus</a>
+				</td>
+			</tr>
 		<?php } ?>
 	</table>
 </body>

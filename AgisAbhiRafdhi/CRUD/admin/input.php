@@ -15,16 +15,24 @@
 	<form action="input-aksi.php" method="post">
 		<table>
 			<tr>
-				<td>Matkul</td>
-				<td><input type="text" name="nama_matkul"></td>
+				<td>Username</td>
+				<td><input type="text" name="username"></td>
 			</tr>
 			<tr>
-				<td>Nama Guru</td>
-				<td><input type="text" name="nama_guru"></td>
+				<td>Password</td>
+				<td><input type="text" name="password"></td>
 			</tr>
+			<tr>
+				<td>status</td>
+				<td><select name="status">
+					<option value="1">1</option>
+					<option value="2">2</option>
+				</select></td>
+			</tr>
+
 			<tr>
 				<td></td>
-				<td><input type="submit" value="Simpan"></td>
+				<td><input type="submit" name="simpan" value="Simpan"></td>
 			</tr>
 		</table>
 	</form>

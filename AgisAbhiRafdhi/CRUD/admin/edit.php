@@ -12,32 +12,33 @@
 	<h3>Edit data</h3>
 
 	<?php
-	include "koneksi.php";
-	$id = $_GET['id_guru'];
-	$query_mysql = mysqli_query("SELECT guru.id_guru, matkul.nama_matkul, guru.nama_guru FROM guru INNER JOIN matkul where id_guru=$id'")or die(mysqli_error());
-	$nomor = 1;
-	while($data = mysqli_fetch_array($query_mysql)){
-	?>
+	include 'koneksi.php';
+  $id    = $_GET['id'];
+	$query = mysqli_query($koneksi,"SELECT * FROM user WHERE id='$id'");
+	$db= mysqli_fetch_array($query);
+		?>
 	<form action="update.php" method="post">
 		<table>
 			<tr>
-				<td>Nama Matkul</td>
+				<td>Username</td>
 				<td>
-					<input type="hidden" name="id_guru" value="<?php echo $data['id_guru'] ?>">
-					<input type="text" name="nama_matkul" value="<?php echo $data['nama_matkul'] ?>">
+					<input type="hidden" name="id" value="<?php echo $db['id'] ?>">
+					<input type="text" name="username" value="<?php echo $db['username'] ?>">
 				</td>
 			</tr>
 			<tr>
-				<td>Nama Guru</td>
-				<td><input type="text" name="nama_guru" value="<?php echo $data['nama_guru'] ?>"></td>
+				<td>Password</td>
+				<td><input type="text" name="password" value="<?php echo $db['password'] ?>"></td>
 			</tr>
-
+			<tr>
+				<td>Status</td>
+				<td><input type="text" name="status" value="<?php echo $db ['status']?>"></td>
+			</tr>
 			<tr>
 				<td></td>
-				<td><input type="submit" value="Simpan"></td>
+				<td><input type="submit" name="edit" value="Simpan"></td>
 			</tr>
 		</table>
 	</form>
-	<?php } ?>
 </body>
 </html>

@@ -1,14 +1,23 @@
 <?php
-$db_host = "localhost";
-$db_user = "root";
-$db_pass = "";
-$db_name = "mapel";
-
-$koneksi = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-
-if(mysqli_connect_errno()){
-	echo 'Gagal melakukan koneksi ke Database : '.mysqli_connect_error();
-}else{
-	echo 'Koneksi berhasil ^_^';
+/**
+ *
+ */
+class DB
+{
+  public $con;
+  function __construct()
+  {
+    $con = new mysqli("localhost","root","","mapel");
+    if($con){
+      $this->con = $con;
+    }else{
+      exit("Connection Failed");
+    }
+  }
+  public function get()
+  {
+    return $this->con;
+  }
 }
+
 ?>

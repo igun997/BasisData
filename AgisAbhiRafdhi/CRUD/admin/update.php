@@ -1,11 +1,15 @@
 <?php
-
 include 'koneksi.php';
-$id = $_POST['id_guru'];
-$nama = $_POST['nama_matkul'];
-$nama_guru = $_POST['nama_guru'];
+if(isset($_POST['edit'])){
+$id = $_POST['id'];
+$username = $_POST['username'];
+$password = $_POST['password'];
+$status   = $_POST['status'];
 
-mysqli_query("UPDATE guru SET nama_matkul='$nama_matkul', nama_guru='$nama_guru' SELECT guru.id_guru, matkul.nama_matkul, guru.nama_guru from guru INNER JOIN matkul WHERE id_guru='$id'");
+$edit = mysqli_query($koneksi,"UPDATE `user` SET `username`='$username', `password`='$password', `status`=$status WHERE `id`='$id'");
+}
+if(mysqli_affected_rows()>0){
 
-header("location:index.php?pesan=update");
+}
+header("location:halaman_utama.php?pesan=update");
 ?>

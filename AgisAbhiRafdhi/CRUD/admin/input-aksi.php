@@ -1,9 +1,12 @@
 <?php
 include 'koneksi.php';
-$nama_matkul = $_POST['nama_matkul'];
-$nama_guru = $_POST['nama_guru'];
-
-mysqli_query("INSERT INTO guru VALUES('','$nama_matkul','$nama_guru') SELECT matkul.nama_matkul, guru.nama_guru. FROM guru INNER JOIN matkul ON guru.id_guru=matkul.id_matkul");
-
+if(isset($_POST['simpan'])) {
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+  $status   = $_POST['status'];
+  $query =mysqli_query($koneksi,"INSERT INTO `user` (`username`,`password`,`status`) VALUES ('$username','$password',$status)");
+}else{
+  echo "<script>alert('gagal ditambah');</script>";
+}
 header("location:halaman_utama.php?pesan=input");
 ?>
