@@ -33,18 +33,21 @@
     </table>
   </form>
   <?php
-  @$nama      = $_POST['nama'];
-  @$alamat    = $_POST['alamat'];
-  @$jk        = $_POST['jk'];
-  @$sekolah   = $_POST['sekolah'];
+  if(isset($_POST["nama"])){
+    $nama      = $_POST['nama'];
+    $alamat    = $_POST['alamat'];
+    $jk        = $_POST['jk'];
+    $sekolah   = $_POST['sekolah'];
 
-  echo "Nama    : ".$nama;
-  echo "<br>";
-  echo "Alamat  : ".$alamat;
-  echo "<br>";
-  echo "Jenis Kelamin : ".$jk;
-  echo "<br>";
-  echo "Sekolah : ".$sekolah;
+
+    echo "Nama    : ".$nama; '".."'
+    echo "<br>";
+    echo "Alamat  : ".$alamat;
+    echo "<br>";
+    echo "Jenis Kelamin : ".$jk;
+    echo "<br>";
+    echo "Sekolah : ".$sekolah;
+  }
   ?>
 </body>
 </html>
