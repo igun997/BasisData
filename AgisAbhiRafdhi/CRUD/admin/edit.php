@@ -15,14 +15,14 @@
 	include 'koneksi.php';
   $id    = $_GET['id'];
 	$query = mysqli_query($koneksi,"SELECT * FROM user WHERE id='$id'");
-	$db= mysqli_fetch_array($query);
+	$db = mysqli_fetch_array($query);
 		?>
 	<form action="update.php" method="post">
 		<table>
 			<tr>
 				<td>Username</td>
 				<td>
-					<input type="hidden" name="id" value="<?php echo $db['id'] ?>">
+					<input type="hidden" name="id"  value="<?php echo $db['id'] ?>">
 					<input type="text" name="username" value="<?php echo $db['username'] ?>">
 				</td>
 			</tr>
