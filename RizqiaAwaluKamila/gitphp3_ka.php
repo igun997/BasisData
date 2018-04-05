@@ -7,11 +7,11 @@
   <form action="gitphp3_ka.php" method="get">
     <table>
         <tr>
-          <td>Nama :</td>
-          <td><input type="text" name="nama"></td>
+          <td> Dewasa :</td>
+          <td><input type="number" name="total_dewasa"></td>
         </tr>
         <tr>
-          <td>Total Anak :</td>
+          <td> Anak :</td>
           <td><input type="number" name="total_anak"></td>
         </tr>
         <tr>
@@ -40,7 +40,7 @@
     </table>
   </form>
   <?php
-  @$nama = $_GET['nama'];
+  @$total_dewasa = $_GET['total_dewasa'];
   @$total_anak = $_GET['total_anak'];
   @$s_awal = $_GET['s_awal'];
   @$s_akhir = $_GET['s_akhir'];
@@ -54,20 +54,18 @@
   }
 
   if($total_anak>0){
-    $harga=100000;
+    $harga_dewasa=100000*$total_dewasa;
     $harga_anak=100000*($total_anak*0.1);
-    $total=$harga+$harga_anak;
+    $total=$harga_dewasa+$harga_anak;
   }else{
-    $harga=100000;
-    $harga_anak=0;
-    $total=$harga;
+    $total=0;
   }
 
-  echo "Nama : $nama <br>";
+  echo "Jumlah Dewasa : $total_dewasa <br>";
   echo "Jumlah Anak : $total_anak <br>";
   echo "Pemberangkatan Dari : $s_awal <br>";
   echo "Tujuan : $s_akhir <br>";
-  echo "Harga Tiket Anda : Rp.$harga <br>";
+  echo "Harga Tiket $total_dewasa Dewasa : Rp.$harga_dewasa <br>";
   echo "Harga Tiket $total_anak Anak : Rp.$harga_anak <br>";
   echo "Total : Rp.$total <br>";
 

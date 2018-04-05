@@ -1,6 +1,6 @@
 <?php
 echo "IF ELSE<br>";
-  $tahun=("2016");
+  $tahun=("2017");
   if($tahun%4==0)
   {
     echo "$tahun Adalah Tahun Kabisat <br>";
