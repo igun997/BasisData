@@ -1,31 +1,28 @@
 <?PHP
 include 'koneksi.php';
-if (!isset($username) || !isset($password)) {
-header( “Location: http://domainanda/login.html” );
-}
-elseif (empty($username) || empty($password)) {
-header( “Location: http://domainanda/login.html” );
+$username = $_POST['username'];
+$password = $_POST['password'];
+if (empty($username) || empty($password)) {
+header( "location:login.html");//domainanda/login.html” );
 }
 else{
-$user = addslashes($_POST[‘username’]);
-$pass = md5($_POST[‘password’]);
 
-$result=mysql_query(“select * from users where username=’$user’ AND password=$pass, $db);
-
-$rowCheck = mysql_num_rows($result);
+$result=mysqli_query($koneksi,"SELECT * FROM `user` WHERE `username`=`$username` AND `password`=`$password`");
+echo " $result";
+$rowCheck = mysqli_num_rows($result);
 
 if($rowCheck > 0){
-while($row = mysql_fetch_array($result)){
+while($row = mysqli_fetch_array($result)){
 
 session_start();
-session_register(‘username’);
+session_register(`username`);
 
-echo ‘login berhasil..!!’;
-header( “Location: home.php” );
+echo "login..berhasil!!";
+header( "location: tabel.php" );
 }
 }
 else {
-echo ‘Invalid username or password, coba lagi deh.. ‘;
+echo 'Invalid username or password, coba lagi deh.. ';
 }
 }
 ?>

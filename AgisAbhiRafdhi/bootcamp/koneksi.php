@@ -1,8 +1,7 @@
 <?php
-include 'koneksi.php';
 $host  = "localhost";
 $user  = "root";
 $pass  = "";
-$database  = "crud";
+$database  = "berita";
 $koneksi = mysqli_connect($host,$user,$pass,$database);
  ?>
